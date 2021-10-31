@@ -11,7 +11,7 @@ def transform_script():
     summary_file = input('File name:')
 
 
-    # read in inputted csv file.
+    # read in input csv file.
     file_path = f'C:/Users/mcmco/Desktop/QuikMed/Payroll/Summary/{summary_file}.csv'
     timesheet_summary = pd.read_csv(file_path, header=2)
 
@@ -56,7 +56,7 @@ def transform_script():
     wellness_payroll.loc[wellness_payroll['Employee']=='Carrie Guga', 'Pay Rate'] = '$4900'
     wellness_payroll.loc[wellness_payroll['Employee']=='Carrie Guga', 'Hours'] = 1
 
-    wellness_payroll.loc[wellness_payroll['Employee']=='Milly Smith', 'Pay Rate'] = '$5000'
+    wellness_payroll.loc[wellness_payroll['Employee']=='Milly Smith', 'Pay Rate'] = '$6000'
     wellness_payroll.loc[wellness_payroll['Employee']=='Milly Smith', 'Hours'] = 1
 
 
@@ -71,6 +71,9 @@ def transform_script():
     # apply payroll function for payroll amount column. 
     wellness_payroll['Payroll Amount'] = wellness_payroll.apply(lambda x: payroll(x['Pay Rate'], x['Hours']), axis=1)
 
+
+    # add DOT column
+    wellness_payroll['DOT'] = ''
 
     # add notes column and add Janney Montgomery for Carrie and Milly
     wellness_payroll['Notes'] = ''
@@ -105,7 +108,7 @@ def transform_script():
         'Office Admin'
         ]
 
-    cei_payroll = timesheet_summary.query('Employee in @ cei_emp or Role in @cei_role')
+    cei_payroll = timesheet_summary.query('Employee in @cei_emp or Role in @cei_role')
     cei_payroll.reset_index(drop=True, inplace=True)
 
 
@@ -138,10 +141,10 @@ def transform_script():
         'Pay Rate':20.0,
         'Hours':28},
         {'Employee':'Estevan Smith',
-        'Pay Rate':600.0,
+        'Pay Rate':1200.0,
         'Hours':1},
         {'Employee':'Iliana Smith',
-        'Pay Rate':600.0,
+        'Pay Rate':1200.0,
         'Hours':1}
         ]
 
@@ -166,9 +169,9 @@ def transform_script():
     cei_payroll = cei_payroll.sort_values(by=['Hours'], ascending=False).reset_index(drop=True)
 
 
-    # return both dataframes
-    return wellness_payroll, cei_payroll
+    # return both dataframes and payroll date
+    return wellness_payroll, cei_payroll, file_path
 
 
 # unpack returned tuple
-wellness_payroll, cei_payroll = transform_script()
+wellness_payroll, cei_payroll, file_path = transform_script()
