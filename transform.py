@@ -100,7 +100,9 @@ def transform_script():
         'Rebecca Wisner',
         'Chelby Davis',
         'Mia Kelly', 
-        'Carrie Lewandowski'
+        'Carrie Lewandowski',
+        'Autumn Koons',
+        'Carlos Smith'
         ]
     cei_role = [
         'Receptionist',
