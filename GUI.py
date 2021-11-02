@@ -12,7 +12,8 @@ class MainWindow(QDialog):
         self.browse_btn.clicked.connect(self.browse_files)
 
     def browse_files(self):
-        file_path = QFileDialog.getOpenFileName(self, 'Choose Summary File Below:', 'C:\\Users\\mcmco\\Desktop', '*.csv')
+        # remember to change the folder where filedialog starts
+        file_path = QFileDialog.getOpenFileName(self, 'Choose Summary File Below:', 'C:\\Users\\mcmco\\Desktop\\QuikMed\\Payroll\\Summary', '*.csv')
         fname = file_path[0].split('/')[-1]
         self.file_name.setText(fname)
 
