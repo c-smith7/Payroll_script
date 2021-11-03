@@ -38,7 +38,7 @@ def format_script():
 
 
     # edit column widths
-    wellness_col_widths = [21, 11.5, 11.5, 16, 6, 23]
+    wellness_col_widths = [21, 11.5, 11.5, 16, 19, 9.5]
     cei_col_widths = [21, 11.5, 11.5, 16, 23]
 
     for i, width in enumerate(wellness_col_widths):

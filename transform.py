@@ -78,6 +78,11 @@ def transform_script():
     wellness_payroll.loc[wellness_payroll['Employee']=='Milly Smith', 'Notes'] = 'Janney Montgomery'
 
 
+    # add blank column for Carrie's DOT visits.
+    wellness_payroll[''] = ''
+    wellness_payroll.loc[wellness_payroll['Employee']=='Carrie Guga', ''] = 'DOT'
+
+
     # check for and add overtime note if needed. 
     wellness_payroll.loc[wellness_payroll['Hours'] > 80, 'Notes'] = 'Overtime'
 
