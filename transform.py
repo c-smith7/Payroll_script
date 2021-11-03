@@ -17,7 +17,7 @@ def transform_script():
 
 
     # remove unwanted columns from df. 
-    timesheet_summary.drop(columns=['Actual & Scheduled Diff', 'Scheduled Hours'], inplace=True)
+    # timesheet_summary.drop(columns=['Actual & Scheduled Diff', 'Scheduled Hours'], inplace=True)
 
 
     # Merge first and last name columns, and rearange columns.
@@ -71,9 +71,6 @@ def transform_script():
     # apply payroll function for payroll amount column. 
     wellness_payroll['Payroll Amount'] = wellness_payroll.apply(lambda x: payroll(x['Pay Rate'], x['Hours']), axis=1)
 
-
-    # add DOT column
-    wellness_payroll['DOT'] = ''
 
     # add notes column and add Janney Montgomery for Carrie and Milly
     wellness_payroll['Notes'] = ''
@@ -133,9 +130,9 @@ def transform_script():
 
     # Add other salaried employees
     salary_employees = [
-        {'Employee':'Cassidy Davis',
-        'Pay Rate':18.0,
-        'Hours':40},
+        #{'Employee':'Cassidy Davis',
+        #'Pay Rate':18.0,
+        #'Hours':40},
         {'Employee':'Shannon Herbert',
         'Pay Rate':18.0,
         'Hours':20},
