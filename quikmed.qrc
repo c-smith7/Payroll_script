@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="quikmed_logo">
+    <file>quikmed-logo.png</file>
+  </qresource>
+</RCC>
