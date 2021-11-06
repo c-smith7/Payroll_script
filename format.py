@@ -9,10 +9,16 @@ from openpyxl.utils.dataframe import dataframe_to_rows
 from openpyxl.utils import get_column_letter
 from openpyxl.styles import Font, NamedStyle, Alignment, Border, numbers
 from openpyxl.formatting.rule import CellIsRule
-from transform import wellness_payroll, cei_payroll, file_path
+from transform import transform_script
 
 
-def format_script():
+def format_script(file):
+    # get variables from transform.py
+    transform_script(file)
+    wellness_payroll = transform_script.wellness
+    cei_payroll = transform_script.cei
+    file_path = transform_script.file_path
+
     # Instantiate workbook, and activate worksheet for wellness payroll
     wb = Workbook()
     ws_wellness = wb.active
@@ -132,4 +138,4 @@ def format_script():
     save_path = f'C:/Users/mcmco/Desktop/QuikMed/Payroll/Final/Payroll_{payroll_date}.xlsx'
     wb.save(save_path)
 
-format_script()
+#format_script()

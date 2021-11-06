@@ -2,22 +2,14 @@
 
 import pandas as pd
 from payroll_amt import payroll
+#from GUI import MainWindow
 
 
-def transform_script():
-    
-    # First, user will be prompted to input the summary file name without file extension (.csv)
-    # Later I will implement a simple Qt gui file browser to make this step more user friendly.
-    summary_file = input('File name:')
+def transform_script(file):
 
-
-    # read in input csv file.
-    file_path = f'C:/Users/mcmco/Desktop/QuikMed/Payroll/Summary/{summary_file}.csv'
+    # read in csv file from GUI.
+    file_path = f'C:/Users/mcmco/Desktop/QuikMed/Payroll/Summary/{file}'
     timesheet_summary = pd.read_csv(file_path, header=2)
-
-
-    # remove unwanted columns from df. 
-    # timesheet_summary.drop(columns=['Actual & Scheduled Diff', 'Scheduled Hours'], inplace=True)
 
 
     # Merge first and last name columns, and rearange columns.
@@ -173,9 +165,12 @@ def transform_script():
     cei_payroll = cei_payroll.sort_values(by=['Hours'], ascending=False).reset_index(drop=True)
 
 
-    # return both dataframes and payroll date
-    return wellness_payroll, cei_payroll, file_path
+    # create function attributes for required variables in format.py
+    transform_script.wellness = wellness_payroll
+    transform_script.cei = cei_payroll
+    transform_script.file_path = file_path
+    #return wellness_payroll, cei_payroll, file_path
 
 
 # unpack returned tuple
-wellness_payroll, cei_payroll, file_path = transform_script()
+#wellness_payroll, cei_payroll, file_path = transform_script()
