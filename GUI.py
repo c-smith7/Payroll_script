@@ -3,7 +3,7 @@ import time
 import os
 from PyQt5 import QtCore, QtGui
 from PyQt5 import QtWidgets
-from PyQt5.QtCore import QFile, QObject, QRunnable, QThreadPool, pyqtSignal, pyqtSlot
+from PyQt5.QtCore import QFile, QObject, QRunnable, QThreadPool, Qt, pyqtSignal, pyqtSlot
 from PyQt5.QtWidgets import QDialog, QApplication, QFileDialog
 from PyQt5.uic import loadUi
 from format import format_script
@@ -15,6 +15,7 @@ class MainWindow(QDialog):
         self.app_icon = QtGui.QIcon()
         self.app_icon.addFile('quikmed-logo.ico', QtCore.QSize(16, 16))
         self.setWindowIcon(self.app_icon)
+        self.setWindowFlag(Qt.WindowMinimizeButtonHint, True)
         self.threadpool = QThreadPool()
         self.prog_bar.setVisible(False)
         self.open_file_btn.setVisible(False)
