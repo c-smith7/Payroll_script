@@ -44,13 +44,15 @@ def transform_script(file):
     wellness_payroll.reset_index(drop=True, inplace=True)
 
 
-    # Edit Milly's and Carrie's pay rate and hours
+    # Edit Milly's, Carrie's, and Cassidy's pay rate and hours
     wellness_payroll.loc[wellness_payroll['Employee']=='Carrie Guga', 'Pay Rate'] = '$4900'
     wellness_payroll.loc[wellness_payroll['Employee']=='Carrie Guga', 'Hours'] = 1
 
     wellness_payroll.loc[wellness_payroll['Employee']=='Milly Smith', 'Pay Rate'] = '$6000'
     wellness_payroll.loc[wellness_payroll['Employee']=='Milly Smith', 'Hours'] = 1
 
+    wellness_payroll.loc[wellness_payroll['Employee']=='Cassidy Davis', 'Pay Rate'] = '$1600'
+    wellness_payroll.loc[wellness_payroll['Employee']=='Cassidy Davis', 'Hours'] = 1
 
     # remove dollar signs.
     wellness_payroll['Pay Rate'] = wellness_payroll['Pay Rate'].str[1:]
