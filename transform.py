@@ -51,8 +51,9 @@ def transform_script(file):
     wellness_payroll.loc[wellness_payroll['Employee']=='Milly Smith', 'Pay Rate'] = '$6000'
     wellness_payroll.loc[wellness_payroll['Employee']=='Milly Smith', 'Hours'] = 1
 
-    wellness_payroll.loc[wellness_payroll['Employee']=='Cassidy Davis', 'Pay Rate'] = '$1600'
-    wellness_payroll.loc[wellness_payroll['Employee']=='Cassidy Davis', 'Hours'] = 1
+    # Removed from salaried employment
+    # wellness_payroll.loc[wellness_payroll['Employee']=='Cassidy Davis', 'Pay Rate'] = '$1600'
+    # wellness_payroll.loc[wellness_payroll['Employee']=='Cassidy Davis', 'Hours'] = 1
 
     # remove dollar signs.
     wellness_payroll['Pay Rate'] = wellness_payroll['Pay Rate'].str[1:]
