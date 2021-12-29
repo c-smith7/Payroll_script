@@ -98,7 +98,8 @@ def transform_script(file):
         'Mia Kelly', 
         'Carrie Lewandowski',
         'Autumn Koons',
-        'Carlos Smith'
+        'Carlos Smith',
+        'Sydney Rodderick'
         ]
     cei_role = [
         'Receptionist',
@@ -111,8 +112,8 @@ def transform_script(file):
 
 
     # Edit Carlos Smith's pay rate and hours. 
-    cei_payroll.loc[cei_payroll['Employee']=='Carlos Smith', 'Pay Rate'] = '$2000'
-    cei_payroll.loc[cei_payroll['Employee']=='Carlos Smith', 'Hours'] = 1
+    # cei_payroll.loc[cei_payroll['Employee']=='Carlos Smith', 'Pay Rate'] = '$2000'
+    # cei_payroll.loc[cei_payroll['Employee']=='Carlos Smith', 'Hours'] = 1
 
 
     # remove dollar signs.
@@ -129,9 +130,9 @@ def transform_script(file):
 
     # Add other salaried employees
     salary_employees = [
-        #{'Employee':'Cassidy Davis',
-        #'Pay Rate':18.0,
-        #'Hours':40},
+        {'Employee':'Carlos Smith',
+        'Pay Rate':2000.0,
+        'Hours':1},
         {'Employee':'Shannon Herbert',
         'Pay Rate':18.0,
         'Hours':20},
