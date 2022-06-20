@@ -45,7 +45,7 @@ def transform_script(file):
 
 
     # Edit Milly's, Carrie's, and Cassidy's pay rate and hours
-    wellness_payroll.loc[wellness_payroll['Employee']=='Carrie Guga', 'Pay Rate'] = '$4900'
+    wellness_payroll.loc[wellness_payroll['Employee']=='Carrie Guga', 'Pay Rate'] = '$5000'
     wellness_payroll.loc[wellness_payroll['Employee']=='Carrie Guga', 'Hours'] = 1
 
     wellness_payroll.loc[wellness_payroll['Employee']=='Milly Smith', 'Pay Rate'] = '$6000'
