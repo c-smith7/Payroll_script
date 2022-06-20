@@ -40,7 +40,7 @@ def transform_script(file):
         'Nurse'
         ]
 
-    wellness_payroll = timesheet_summary.query('Employee in @wellness_emp or Role in @wellness_role')
+    wellness_payroll = timesheet_summary.query('Employee in @wellness_emp')
     wellness_payroll.reset_index(drop=True, inplace=True)
 
 
