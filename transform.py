@@ -33,7 +33,8 @@ def transform_script(file):
         'Tricia Loomis', 
         'Rick Tontarski',
         'Carrie Guga',
-        'Milly Smith'
+        'Milly Smith',
+        'Andrea Florkey'
         ]
     wellness_role = [
         'PA', 
