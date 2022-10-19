@@ -106,7 +106,8 @@ def transform_script(file):
     cei_role = [
         'Receptionist',
         'COVID',
-        'Office Admin'
+        'Office Admin',
+        'Work From Home'
         ]
 
     cei_payroll = timesheet_summary.query('Employee in @cei_emp or Role in @cei_role')
@@ -133,7 +134,7 @@ def transform_script(file):
     # Add other salaried employees
     salary_employees = [
         {'Employee':'Carlos Smith',
-        'Pay Rate':2000.0,
+        'Pay Rate':2300.0,
         'Hours':1},
         {'Employee':'Shannon Herbert',
         'Pay Rate':18.0,
@@ -142,10 +143,10 @@ def transform_script(file):
         'Pay Rate':20.0,
         'Hours':28},
         {'Employee':'Estevan Smith',
-        'Pay Rate':1200.0,
+        'Pay Rate':1700.0,
         'Hours':1},
         {'Employee':'Iliana Smith',
-        'Pay Rate':1200.0,
+        'Pay Rate':1700.0,
         'Hours':1}
         ]
 
