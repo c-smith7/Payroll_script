@@ -45,12 +45,15 @@ def transform_script(file):
     wellness_payroll.reset_index(drop=True, inplace=True)
 
 
-    # Edit Milly's, Carrie's, and Cassidy's pay rate and hours
+    # Edit Milly's, Carrie's, and Jeff's pay rate and hours
     wellness_payroll.loc[wellness_payroll['Employee']=='Carrie Guga', 'Pay Rate'] = '$5000'
     wellness_payroll.loc[wellness_payroll['Employee']=='Carrie Guga', 'Hours'] = 1
 
     wellness_payroll.loc[wellness_payroll['Employee']=='Milly Smith', 'Pay Rate'] = '$6000'
     wellness_payroll.loc[wellness_payroll['Employee']=='Milly Smith', 'Hours'] = 1
+
+    wellness_payroll.loc[wellness_payroll['Employee'] == 'Jeffrey Smith', 'Pay Rate'] = '$2500'
+    wellness_payroll.loc[wellness_payroll['Employee'] == 'Jeffrey Smith', 'Hours'] = 1
 
     # Removed from salaried employment
     # wellness_payroll.loc[wellness_payroll['Employee']=='Cassidy Davis', 'Pay Rate'] = '$1600'
@@ -134,7 +137,7 @@ def transform_script(file):
     # Add other salaried employees
     salary_employees = [
         {'Employee':'Carlos Smith',
-        'Pay Rate':2300.0,
+        'Pay Rate':2400.0,
         'Hours':1},
         {'Employee':'Shannon Herbert',
         'Pay Rate':18.0,
