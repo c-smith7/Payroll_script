@@ -45,19 +45,30 @@ def transform_script(file):
     wellness_payroll.reset_index(drop=True, inplace=True)
 
 
-    # Edit Milly's, Carrie's, and Jeff's pay rate and hours
+    # Edit Milly's and Carrie's pay rate and hours
     wellness_payroll.loc[wellness_payroll['Employee']=='Carrie Guga', 'Pay Rate'] = '$5000'
     wellness_payroll.loc[wellness_payroll['Employee']=='Carrie Guga', 'Hours'] = 1
 
     wellness_payroll.loc[wellness_payroll['Employee']=='Milly Smith', 'Pay Rate'] = '$6000'
     wellness_payroll.loc[wellness_payroll['Employee']=='Milly Smith', 'Hours'] = 1
 
-    wellness_payroll.loc[wellness_payroll['Employee'] == 'Jeffrey Smith', 'Pay Rate'] = '$2500'
-    wellness_payroll.loc[wellness_payroll['Employee'] == 'Jeffrey Smith', 'Hours'] = 1
+    wellness_payroll.loc[wellness_payroll['Employee']=='Jeffrey Smith', 'Pay Rate'] = '$2500'
+    wellness_payroll.loc[wellness_payroll['Employee']=='Jeffrey Smith', 'Hours'] = 1
 
     # Removed from salaried employment
     # wellness_payroll.loc[wellness_payroll['Employee']=='Cassidy Davis', 'Pay Rate'] = '$1600'
     # wellness_payroll.loc[wellness_payroll['Employee']=='Cassidy Davis', 'Hours'] = 1
+
+    # Loop to add any salaried employees to Wellness that are not on Homebase
+
+    salary_employees_wellness = [
+        {'Employee': 'Jeffrey Smith',
+         'Pay Rate': 2500.0,
+         'Hours': 1}
+    ]
+
+    for employee in salary_employees_wellness:
+        wellness_payroll = wellness_payroll.append(employee, ignore_index=True)
 
     # remove dollar signs.
     wellness_payroll['Pay Rate'] = wellness_payroll['Pay Rate'].str[1:]
