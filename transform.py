@@ -52,12 +52,19 @@ def transform_script(file):
     wellness_payroll.loc[wellness_payroll['Employee']=='Milly Smith', 'Pay Rate'] = '$6000'
     wellness_payroll.loc[wellness_payroll['Employee']=='Milly Smith', 'Hours'] = 1
 
-    wellness_payroll.loc[wellness_payroll['Employee']=='Jeffrey Smith', 'Pay Rate'] = '$2500'
-    wellness_payroll.loc[wellness_payroll['Employee']=='Jeffrey Smith', 'Hours'] = 1
+    # wellness_payroll.loc[wellness_payroll['Employee']=='Jeffrey Smith', 'Pay Rate'] = '$2500'
+    # wellness_payroll.loc[wellness_payroll['Employee']=='Jeffrey Smith', 'Hours'] = 1
 
     # Removed from salaried employment
     # wellness_payroll.loc[wellness_payroll['Employee']=='Cassidy Davis', 'Pay Rate'] = '$1600'
     # wellness_payroll.loc[wellness_payroll['Employee']=='Cassidy Davis', 'Hours'] = 1
+
+    # remove dollar signs.
+    wellness_payroll['Pay Rate'] = wellness_payroll['Pay Rate'].str[1:]
+
+
+    # convert pay rate values to floats
+    wellness_payroll['Pay Rate'] = wellness_payroll['Pay Rate'].astype('float64')
 
     # Loop to add any salaried employees to Wellness that are not on Homebase
 
@@ -69,13 +76,6 @@ def transform_script(file):
 
     for employee in salary_employees_wellness:
         wellness_payroll = wellness_payroll.append(employee, ignore_index=True)
-
-    # remove dollar signs.
-    wellness_payroll['Pay Rate'] = wellness_payroll['Pay Rate'].str[1:]
-
-
-    # convert pay rate values to floats
-    wellness_payroll['Pay Rate'] = wellness_payroll['Pay Rate'].astype('float64')
 
 
     # apply payroll function for payroll amount column. 
