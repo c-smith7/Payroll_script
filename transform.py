@@ -34,7 +34,8 @@ def transform_script(file):
         'Rick Tontarski',
         'Carrie Guga',
         'Milly Smith',
-        'Andrea Florkey'
+        'Andrea Florkey',
+        'Molly Hall'
         ]
     wellness_role = [
         'PA', 
@@ -128,9 +129,8 @@ def transform_script(file):
     cei_payroll.reset_index(drop=True, inplace=True)
 
 
-    # Edit Carlos Smith's pay rate and hours. 
-    # cei_payroll.loc[cei_payroll['Employee']=='Carlos Smith', 'Pay Rate'] = '$2000'
-    # cei_payroll.loc[cei_payroll['Employee']=='Carlos Smith', 'Hours'] = 1
+    # Edit Chelby's name.
+    cei_payroll.loc[cei_payroll['Employee']=='Chelby Davis', 'Employee'] = 'Chelby Bowen'
 
 
     # remove dollar signs.
