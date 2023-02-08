@@ -151,7 +151,7 @@ def transform_script(file):
         'Pay Rate':2400.0,
         'Hours':1},
         {'Employee':'Shannon Herbert',
-        'Pay Rate':18.0,
+        'Pay Rate':20.0,
         'Hours':20},
         {'Employee':'MaryJo Rogers',
         'Pay Rate':20.0,
