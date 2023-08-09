@@ -15,11 +15,11 @@ def transform_script(file):
     # Merge first and last name columns, and rearange columns.
     timesheet_summary['Employee'] = timesheet_summary['First Name'] + ' ' + timesheet_summary['Last Name']
     timesheet_summary.drop(columns=['First Name', 'Last Name'], inplace=True)
-    timesheet_summary = timesheet_summary[['Employee', 'Role', 'Wage Rate', 'Actual Hours']]
+    timesheet_summary = timesheet_summary[['Employee', 'Role', 'Wage rate', 'Actual hours']]
 
 
     # Rename columns
-    timesheet_summary.rename(columns={'Wage Rate':'Pay Rate', 'Actual Hours':'Hours'}, inplace=True)
+    timesheet_summary.rename(columns={'Wage rate': 'Pay Rate', 'Actual hours': 'Hours'}, inplace=True)
 
 
     # Next, we will split the summary timesheet into two timesheets/payrolls, Wellness and CEI
@@ -35,7 +35,8 @@ def transform_script(file):
         'Carrie Guga',
         'Milly Smith',
         'Andrea Florkey',
-        'Molly Hall'
+        'Molly Hall',
+        'Ryanne Cole'
         ]
     wellness_role = [
         'PA', 
@@ -116,7 +117,8 @@ def transform_script(file):
         'Carrie Lewandowski',
         'Autumn Koons',
         'Carlos Smith',
-        'Sydney Rodderick'
+        'Sydney Rodderick',
+        'Juan Martelo'
         ]
     cei_role = [
         'Receptionist',
@@ -152,7 +154,7 @@ def transform_script(file):
         'Hours':1},
         {'Employee':'Shannon Herbert',
         'Pay Rate':20.0,
-        'Hours':20},
+        'Hours':10},
         {'Employee':'MaryJo Rogers',
         'Pay Rate':20.0,
         'Hours':28},
