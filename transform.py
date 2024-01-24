@@ -13,8 +13,8 @@ def transform_script(file):
 
 
     # Merge first and last name columns, and rearange columns.
-    timesheet_summary['Employee'] = timesheet_summary['First Name'] + ' ' + timesheet_summary['Last Name']
-    timesheet_summary.drop(columns=['First Name', 'Last Name'], inplace=True)
+    timesheet_summary['Employee'] = timesheet_summary['First name'] + ' ' + timesheet_summary['Last name']
+    timesheet_summary.drop(columns=['First name', 'Last name'], inplace=True)
     timesheet_summary = timesheet_summary[['Employee', 'Role', 'Wage rate', 'Actual hours']]
 
 
